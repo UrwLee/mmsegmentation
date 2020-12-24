@@ -18,7 +18,22 @@ bin-release/
 # information for Eclipse / Flash Builder.
 
 my_config/*
-mmseg/datasets/__pycache__
-mmseg/models/backbones/__pycache__
-mmseg/models/utils/__pycache__
 *.sh
+mmseg/__pycache__
+mmseg/apis/__pycache__
+mmseg/core/evaluation/__pycache__
+mmseg/core/seg/__pycache__
+mmseg/core/seg/sampler/__pycache__
+mmseg/core/utils/__pycache__
+mmseg/datasets/__pycache__
+mmseg/datasets/pipelines/__pycache__
+mmseg/models/__pycache__
+mmseg/models/backbones/__pycache__
+mmseg/models/decode_heads/__pycache__
+mmseg/models/losses/__pycache__
+mmseg/models/necks/__pycache__
+mmseg/models/segmentors/__pycache__
+mmseg/models/utils/__pycache__
+mmseg/ops/__pycache__
+mmseg/utils/__pycache__
+mmsegmentation.egg-info/SOURCES.txt
