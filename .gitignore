@@ -19,4 +19,6 @@ bin-release/
 
 my_config/*
 mmseg/datasets/__pycache__
+mmseg/models/backbones/__pycache__
+mmseg/models/utils/__pycache__
 *.sh

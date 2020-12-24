@@ -8,7 +8,7 @@ from mmcv.utils.parrots_wrapper import _BatchNorm
 from mmseg.utils import get_root_logger
 from ..builder import BACKBONES
 from ..utils import ResLayer
-
+from ..utils import SqueezeBodyEdge
 
 class BasicBlock(nn.Module):
     """Basic block for ResNet."""
@@ -114,7 +114,8 @@ class Bottleneck(nn.Module):
                  conv_cfg=None,
                  norm_cfg=dict(type='BN'),
                  dcn=None,
-                 plugins=None):
+                 plugins=None,
+                 dbe=True):
         super(Bottleneck, self).__init__()
         assert style in ['pytorch', 'caffe']
         assert dcn is None or isinstance(dcn, dict)
@@ -135,6 +136,7 @@ class Bottleneck(nn.Module):
         self.with_dcn = dcn is not None
         self.plugins = plugins
         self.with_plugins = plugins is not None
+        self.dbe = dbe
 
         if self.with_plugins:
             # collect plugins for conv1/conv2/conv3
@@ -215,6 +217,7 @@ class Bottleneck(nn.Module):
                 planes, self.after_conv2_plugins)
             self.after_conv3_plugin_names = self.make_block_plugins(
                 planes * self.expansion, self.after_conv3_plugins)
+        self.dbe_module = SqueezeBodyEdge(self.planes*4)
 
     def make_block_plugins(self, in_channels, plugins):
         """make plugins for block.
@@ -289,7 +292,8 @@ class Bottleneck(nn.Module):
 
             if self.downsample is not None:
                 identity = self.downsample(x)
-
+            if self.dbe:
+                out = self.dbe_module(out)
             out += identity
 
             return out
