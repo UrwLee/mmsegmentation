@@ -18,3 +18,5 @@ bin-release/
 # information for Eclipse / Flash Builder.
 
 my_config/*
+mmseg/datasets/__pycache__
+*.sh
