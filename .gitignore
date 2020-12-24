@@ -37,3 +37,4 @@ mmseg/models/utils/__pycache__
 mmseg/ops/__pycache__
 mmseg/utils/__pycache__
 mmsegmentation.egg-info/SOURCES.txt
+mmseg/core/__pycache__/
