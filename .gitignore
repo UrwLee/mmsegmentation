@@ -19,6 +19,7 @@ bin-release/
 
 my_config/*
 *.sh
+demo/
 mmseg/__pycache__
 mmseg/apis/__pycache__
 mmseg/core/evaluation/__pycache__
