@@ -233,8 +233,6 @@ class BaseSegmentor(nn.Module):
         Returns:
             img (Tensor): Only if not `show` or `out_file`
         """
-        print(self.CLASSES)
-        print(palette)
         img = mmcv.imread(img)
         img = img.copy()
         seg = result[0]
