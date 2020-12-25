@@ -32,8 +32,6 @@ def init_segmentor(config, checkpoint=None, device='cuda:0'):
         checkpoint = load_checkpoint(model, checkpoint, map_location='cpu')
         model.CLASSES = checkpoint['meta']['CLASSES']
         model.PALETTE = checkpoint['meta']['PALETTE']
-        model.CLASSES = ['PERSON']
-        model.PALETTE = [[0,0,255]]
     model.cfg = config  # save the config in the model for convenience
     model.to(device)
     model.eval()

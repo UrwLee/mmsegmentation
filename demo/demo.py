@@ -3,7 +3,7 @@ import mmcv
 import os
 
 config_file = '/home/dmx/dmx/code/mmsegmentation/my_config/fcn_r50-d8_512x1024_40k_cocolip.py'
-checkpoint_file = '/home/dmx/dmx/disk/ubuntu_file/checkpoints/FCN/mmseg/fcn_r50-d8_512x1024_20k_cocolip_base_v1/latest.pth'
+checkpoint_file = '/home/dmx/dmx/disk/ubuntu_file/checkpoints/FCN/mmseg/fcn_r50-d8_512x1024_20k_cocolip_base_v2/latest.pth'
 dir = '/home/dmx/dmx/disk/ubuntu_file/data/Human_Seg_CoCo_Lip/val_image'
 
 # build the model from a config file and a checkpoint file
